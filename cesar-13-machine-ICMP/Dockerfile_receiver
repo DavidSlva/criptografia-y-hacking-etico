@@ -1,0 +1,8 @@
+FROM python:3.9
+
+RUN pip install scapy
+
+WORKDIR /app
+COPY receiver.py /app
+
+CMD ["python", "receiver.py"]

@@ -1,0 +1,17 @@
+version: '3'
+services:
+  receiver:
+    build:
+      context: .
+      dockerfile: Dockerfile_receiver
+    networks:
+      - cesar-13-machine-iCMP-network
+    privileged: true  # Agregar esta línea para el receptor
+  sender:
+    build:
+      context: .
+      dockerfile: Dockerfile_sender
+    networks:
+      - cesar-13-machine-iCMP-network
+networks:
+  cesar-13-machine-iCMP-network:
